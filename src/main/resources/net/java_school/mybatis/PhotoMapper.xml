@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="net.java_school.mybatis.PhotoMapper">
+
+    <select id="selectCountOfPhotos" resultType="int">
+        SELECT count(*) FROM photo 
+    </select>
+
+    <select id="selectPhotos" parameterType="hashmap" resultType="net.java_school.photo.Photo">
+        SELECT no,content 
+        FROM (
+            SELECT rownum R,A.* 
+            FROM (
+                SELECT 
+                    no,content
+                FROM 
+                    photo
+                ORDER BY no DESC
+                 ) A
+             )
+        WHERE R BETWEEN #{start} AND #{end}
+    </select>	
+
+    <insert id="insert">
+	    INSERT INTO photo VALUES (seq_photo.nextval, #{content})
+    </insert>
+	
+    <delete id="delete">
+	    DELETE photo WHERE no = #{no}
+    </delete>
+</mapper>

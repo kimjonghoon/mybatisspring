@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  font-family: "Noto Sans KR", "Liberation Sans", Helvetica, "돋움", dotum, sans-serif;
+}
+#wordcard {
+  margin: 7px auto;
+  padding: 1em;
+  border: 3px solid grey;
+  width: 600px;
+  text-align: center;
+}
+#new-form {
+  margin: 7px auto;
+  padding-left: 2em;
+  width: 600px;
+  text-align: right;
+  font-size: 0.8em;
+}

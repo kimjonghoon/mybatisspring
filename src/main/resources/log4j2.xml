@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration xmlns="http://logging.apache.org/log4j/2.0/config">
+    <Appenders>
+        <File name="MyBatisSpring" fileName="MyBatisSpring.log" append="false">
+            <PatternLayout pattern="%t %-5p %c{2} - %m%n" />
+        </File>
+        <Console name="STDOUT" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d %-5p [%t] %C{2} (%F:%L) - %m%n" />
+        </Console>
+    </Appenders>
+    <Loggers>
+        <Logger name="net.java_school" level="DEBUG">
+            <AppenderRef ref="MyBatisSpring" />
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="STDOUT" />
+        </Root>
+    </Loggers>
+</Configuration>

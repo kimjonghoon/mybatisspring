@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.stereotype.Controller;
 
@@ -71,7 +72,7 @@ public class PhotoController {
 	}
 
 	@GetMapping
-	public String index(Integer page, Model model) {
+	public String index(@RequestParam(name="page") Integer page, Model model) {
 		if (page == null)
 			return "redirect:/photo?page=1";
 
@@ -104,12 +105,12 @@ public class PhotoController {
 
 	@PostMapping
 	@ResponseBody
-	public void add(String content) {
+	public void add(@RequestParam(name="content") String content) {
 		photoService.add(content);
 	}
 
 	@DeleteMapping("{no}")
-	public String del(Integer page, @PathVariable Integer no) {
+	public String del(@RequestParam(name="page") Integer page, @PathVariable(name="no") Integer no) {
 		photoService.del(no);
 		return "redirect:/photo?page=" + page;
 	}

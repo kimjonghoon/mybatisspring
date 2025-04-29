@@ -23,7 +23,7 @@ ${wordCard.definitions }
 	<input type="text" name="word" />
 	<input type="text" name="definitions" />
 	<input type="submit" value="Add" style="color: grey;" />
-<!-- 	<a href="photo">Photo</a> -->
+	<a href="photo?page=1"><button type="button">Photo</button></a>
 </form>
 
 </body>

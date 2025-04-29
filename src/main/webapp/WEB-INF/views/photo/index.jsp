@@ -38,7 +38,7 @@ a:hover {
 	text-decoration: underline;
 }
 </style>
-<script src="../resources/js/jquery-3.6.1.min.js"></script>
+<script src="../resources/js/jquery.js"></script>
 <script>
 $(document).ready(function() {
 	$("#addForm").submit(function (event) {
@@ -111,7 +111,7 @@ $(document).ready(function() {
 		<form id="addForm">
 			<input type="text" id="addForm-tf" name="content" style="width: 500px;" />
 			<input id="submit" type="submit" value="Send" />
-			<a href="../">Home</a>
+			<a href="../"><button type="button">Home</button></a>
 		</form>
 	</div>
 	<div style="display:none">
